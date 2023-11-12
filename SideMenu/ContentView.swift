@@ -38,21 +38,26 @@ struct ContentView: View {
                 }
                 // .gesture(drag)
             }
-            .navigationTitle("Menu")
-                        .navigationBarTitleDisplayMode(.inline)
-                        .navigationBarTitleModifier()
-            
-                .navigationBarItems(leading: (
-                    Button(action: {
-                        withAnimation {
-                            self.showMenu.toggle()
-                        }
-                    }) {
-                        Image(systemName: "line.horizontal.3")
-                            .imageScale(.large)
-                            .foregroundColor(.mint)
+//            .navigationBarTitle("Menu", displayMode: .inline)
+//            .foregroundColor(.mint)
+            .navigationBarItems(leading: (
+                Button(action: {
+                    withAnimation {
+                        self.showMenu.toggle()
                     }
-                ))
+                }) {
+                    Image(systemName: "line.horizontal.3")
+                        .imageScale(.large)
+                        .foregroundColor(.black)
+                }
+            ))
+//            .toolbar {
+//                   ToolbarItem(placement: .principal) {
+//                       Text("Menu")
+//                           .font(.system(size: 30, weight: .bold, design: .rounded))
+//                           .foregroundColor(.mint)
+//                   }
+//               }
         }
     }
 }
@@ -72,25 +77,14 @@ struct MainView: View {
                 self.showMenu = true
             }
         }, label: {
-            Text("Open Menu")
-                .font(.system(size: 30, weight: .bold, design: .rounded))
-                .foregroundStyle(.mint)
+            Image("forest")
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
+//            Text("Open Menu")
+//                .font(.system(size: 30, weight: .bold, design: .rounded))
+//                .foregroundStyle(.mint)
         })
     }
 }
 
-// MARK: NavigationBarTitleModifier
-
-struct NavigationBarTitleModifier: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .font(.system(size: 30, weight: .bold, design: .rounded))
-            .foregroundColor(.red)
-    }
-}
-
-extension View {
-    func navigationBarTitleModifier() -> some View {
-        self.modifier(NavigationBarTitleModifier())
-    }
-}
