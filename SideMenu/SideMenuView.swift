@@ -15,44 +15,44 @@ struct SideMenuView: View {
         VStack(alignment: .leading) {
             HStack {
                 Image(systemName: "person.fill")
-                    .font(.system(size: 30, weight: .bold))
+                    .font(.system(size: 25, weight: .bold))
                     .foregroundStyle(.gray )
                 
                 Text("Profile")
-                    .font(.system(size: 25, weight: .bold))
+                    .font(.system(size: 20, weight: .bold))
                     .foregroundStyle(.gray )
             }
             .padding(.top, 100)
             
             HStack {
                 Image(systemName: "house.fill")
-                    .font(.system(size: 30, weight: .bold))
+                    .font(.system(size: 25, weight: .bold))
                     .foregroundStyle(.gray )
                 
                 Text("Home")
-                    .font(.system(size: 25, weight: .bold))
+                    .font(.system(size: 20, weight: .bold))
                     .foregroundStyle(.gray )
             }
             .padding(.top, 20)
             
             HStack {
                 Image(systemName: "envelope")
-                    .font(.system(size: 30, weight: .bold))
+                    .font(.system(size: 25, weight: .bold))
                     .foregroundStyle(.gray )
                 
                 Text("Message")
-                    .font(.system(size: 25, weight: .bold))
+                    .font(.system(size: 20, weight: .bold))
                     .foregroundStyle(.gray )
             }
             .padding(.top, 20)
             
             HStack {
                 Image(systemName: "gear")
-                    .font(.system(size: 30, weight: .bold))
+                    .font(.system(size: 25, weight: .bold))
                     .foregroundStyle(.gray )
                 
                 Text("Settings")
-                    .font(.system(size: 25, weight: .bold))
+                    .font(.system(size: 20, weight: .bold))
                     .foregroundStyle(.gray )
             }
             .padding(.top, 20)
@@ -60,6 +60,8 @@ struct SideMenuView: View {
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color.gray.opacity(0.4))
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
