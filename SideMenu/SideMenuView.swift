@@ -60,10 +60,10 @@ struct SideMenuView: View {
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.black)
     }
 }
 
 #Preview {
     SideMenuView()
+        .preferredColorScheme(.dark)
 }

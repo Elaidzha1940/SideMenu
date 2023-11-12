@@ -25,11 +25,18 @@ struct ContentView: View {
                     }
                 }
         }
-        return NavigationLink {
+        return NavigationView {
             GeometryReader { geometry in
                 ZStack(alignment: .leading) {
                     MainView(showMenu: self.$showMenu)
                         .frame(width: geometry.size.width, height: geometry.size.height)
+                        .offset(x: self.showMenu ? geometry.size.width / 2 : 0)
+                        .disabled(self.showMenu ? true : false)
+                    if self.showMenu {
+                        SideMenuView()
+                            .frame(width: geometry.size.width / 2)
+                            .transition(.move(edge: .leading))
+                    }
                 }
             }
         }
@@ -38,7 +45,7 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-    //.preferredColorScheme(.dark)
+    .preferredColorScheme(.dark)
 }
 
 struct MainView: View {
@@ -52,7 +59,7 @@ struct MainView: View {
         }, label: {
             Text("Open Menu")
                 .font(.system(size: 30, weight: .bold, design: .rounded))
-
+                .foregroundStyle(.mint)
         })
     }
 }
