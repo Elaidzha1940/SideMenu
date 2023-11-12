@@ -36,20 +36,23 @@ struct ContentView: View {
                             .transition(.move(edge: .leading))
                     }
                 }
-               // .gesture(drag)
+                // .gesture(drag)
             }
-            .navigationBarTitle("Menu", displayMode: .inline)
-            .navigationBarItems(leading: (
-                Button(action: {
-                    withAnimation {
-                        self.showMenu.toggle()
+            .navigationTitle("Menu")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .navigationBarTitleModifier()
+            
+                .navigationBarItems(leading: (
+                    Button(action: {
+                        withAnimation {
+                            self.showMenu.toggle()
+                        }
+                    }) {
+                        Image(systemName: "line.horizontal.3")
+                            .imageScale(.large)
+                            .foregroundColor(.mint)
                     }
-                }) {
-                    Image(systemName: "line.horizontal.3")
-                        .imageScale(.large)
-                        .foregroundColor(.mint)
-                }
-            ))
+                ))
         }
     }
 }
@@ -59,6 +62,7 @@ struct ContentView: View {
         .preferredColorScheme(.dark)
 }
 
+// MARK: MainView
 struct MainView: View {
     @Binding var showMenu: Bool
     
@@ -72,5 +76,21 @@ struct MainView: View {
                 .font(.system(size: 30, weight: .bold, design: .rounded))
                 .foregroundStyle(.mint)
         })
+    }
+}
+
+// MARK: NavigationBarTitleModifier
+
+struct NavigationBarTitleModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 30, weight: .bold, design: .rounded))
+            .foregroundColor(.red)
+    }
+}
+
+extension View {
+    func navigationBarTitleModifier() -> some View {
+        self.modifier(NavigationBarTitleModifier())
     }
 }
