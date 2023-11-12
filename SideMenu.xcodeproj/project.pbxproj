@@ -11,6 +11,7 @@
 		E41D367E2B00F2BE00967B82 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41D367D2B00F2BE00967B82 /* ContentView.swift */; };
 		E41D36802B00F2BE00967B82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E41D367F2B00F2BE00967B82 /* Assets.xcassets */; };
 		E41D36832B00F2BE00967B82 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E41D36822B00F2BE00967B82 /* Preview Assets.xcassets */; };
+		E41D368A2B01136F00967B82 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41D36892B01136F00967B82 /* SideMenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		E41D367D2B00F2BE00967B82 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E41D367F2B00F2BE00967B82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E41D36822B00F2BE00967B82 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E41D36892B01136F00967B82 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				E41D367D2B00F2BE00967B82 /* ContentView.swift */,
 				E41D367F2B00F2BE00967B82 /* Assets.xcassets */,
 				E41D36812B00F2BE00967B82 /* Preview Content */,
+				E41D36892B01136F00967B82 /* SideMenuView.swift */,
 			);
 			path = SideMenu;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E41D368A2B01136F00967B82 /* SideMenuView.swift in Sources */,
 				E41D367E2B00F2BE00967B82 /* ContentView.swift in Sources */,
 				E41D367C2B00F2BE00967B82 /* SideMenuApp.swift in Sources */,
 			);

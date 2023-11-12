@@ -10,62 +10,49 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var showMenu = false
+    
     var body: some View {
         
-        VStack(alignment: .leading) {
+        VStack {
             
-            HStack {
-                Image(systemName: "person.fill")
-                    .font(.system(size: 30, weight: .bold))
-                    .foregroundStyle(.gray )
-                
-                Text("Profile")
-                    .font(.system(size: 25, weight: .bold))
-                    .foregroundStyle(.gray )
-            }
-            .padding(.top, 100)
-            
-            HStack {
-                Image(systemName: "house.fill")
-                    .font(.system(size: 30, weight: .bold))
-                    .foregroundStyle(.gray )
-                
-                Text("Home")
-                    .font(.system(size: 25, weight: .bold))
-                    .foregroundStyle(.gray )
-            }
-            .padding(.top, 20)
-            
-            HStack {
-                Image(systemName: "envelope")
-                    .font(.system(size: 30, weight: .bold))
-                    .foregroundStyle(.gray )
-                
-                Text("Message")
-                    .font(.system(size: 25, weight: .bold))
-                    .foregroundStyle(.gray )
-            }
-            .padding(.top, 20)
-            
-            HStack {
-                Image(systemName: "gear")
-                    .font(.system(size: 30, weight: .bold))
-                    .foregroundStyle(.gray )
-                
-                Text("Settings")
-                    .font(.system(size: 25, weight: .bold))
-                    .foregroundStyle(.gray )
-            }
-            .padding(.top, 20)
-            Spacer()
+            let drag = DragGesture()
+                .onEnded {
+                    if $0.translation.width < -100 {
+                        withAnimation {
+                            self.showMenu = false
+                        }
+                    }
+                }
         }
-        .padding()
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.gray)
+        return NavigationLink {
+            GeometryReader { geometry in
+                ZStack(alignment: .leading) {
+                    MainView(showMenu: self.$showMenu)
+                        .frame(width: geometry.size.width, height: geometry.size.height)
+                }
+            }
+        }
     }
 }
 
 #Preview {
     ContentView()
-        //.preferredColorScheme(.dark)
+    //.preferredColorScheme(.dark)
+}
+
+struct MainView: View {
+    @Binding var showMenu: Bool
+    
+    var body: some View {
+        Button(action: {
+            withAnimation {
+                self.showMenu = true
+            }
+        }, label: {
+            Text("Open Menu")
+                .font(.system(size: 30, weight: .bold, design: .rounded))
+
+        })
+    }
 }
