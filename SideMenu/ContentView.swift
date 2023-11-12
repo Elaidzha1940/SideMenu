@@ -47,7 +47,7 @@ struct ContentView: View {
                     }
                 }) {
                     Image(systemName: "line.horizontal.3")
-                        .imageScale(.large)
+                        .font(.system(size: 25, weight: .bold, design: .rounded))
                         .foregroundColor(.black)
                 }
             ))
@@ -79,8 +79,9 @@ struct MainView: View {
         }, label: {
             Image("forest")
                 .resizable()
-                .scaledToFill()
-                .ignoresSafeArea()
+                .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
+
 //            Text("Open Menu")
 //                .font(.system(size: 30, weight: .bold, design: .rounded))
 //                .foregroundStyle(.mint)

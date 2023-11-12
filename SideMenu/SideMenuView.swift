@@ -22,7 +22,7 @@ struct SideMenuView: View {
             // 1
             Button(action: {
                 withAnimation {
-                    fontSize = (fontSize == 20) ? 30 : 20
+                    fontSize = (fontSize == 20) ? 25 : 20
                 }
             }, label: {
                 HStack {
@@ -32,13 +32,13 @@ struct SideMenuView: View {
                 .font(.system(size: fontSize, weight: .bold))
                 .padding()
                 .foregroundColor(.white)
-                .padding(.top, 100)
+                .padding(.top, 20)
             })
             
             // 2
             Button(action: {
                 withAnimation {
-                    fontSize1 = (fontSize1 == 20) ? 30 : 20
+                    fontSize1 = (fontSize1 == 20) ? 25 : 20
                 }
             }, label: {
                 HStack {
@@ -54,7 +54,7 @@ struct SideMenuView: View {
             //3
             Button(action: {
                 withAnimation {
-                    fontSize2 = (fontSize2 == 20) ? 30 : 20
+                    fontSize2 = (fontSize2 == 20) ? 25 : 20
                 }
             }, label: {
                 HStack {
@@ -70,7 +70,7 @@ struct SideMenuView: View {
             // 4
             Button(action: {
                 withAnimation {
-                    fontSize3 = (fontSize3 == 20) ? 30 : 20
+                    fontSize3 = (fontSize3 == 20) ? 25 : 20
                 }
             }, label: {
                 HStack {
@@ -85,7 +85,7 @@ struct SideMenuView: View {
             
             Spacer()
         }
-        .padding()
+        .padding(.top, 100)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color.gray.opacity(0.3))
         .edgesIgnoringSafeArea(.all)
